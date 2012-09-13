@@ -13,6 +13,8 @@ Bundle 'scrooloose/nerdtree'
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['python'],
                            \ 'passive_filetypes': [] }
+let g:syntastic_python_checker_args = '--rcfile=~/.pylintrc'
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
