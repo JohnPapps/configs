@@ -9,6 +9,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/YankRing.vim'
 
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['python'],
@@ -25,6 +26,8 @@ let g:Powerline_symbols = 'fancy'
 set laststatus=2
 
 nnoremap <F5> :GundoToggle<CR>
+
+set tags=~/tags,tags
 
 " Stop long messages
 set shortmess=atI
