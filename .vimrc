@@ -32,6 +32,10 @@ set tags=~/tags,tags
 " Stop long messages
 set shortmess=atI
 
+" Remove whitespace before saving any file
+autocmd BufWritePre        *                :%s/\s\+$//e
+
+
 " Custom leader
 "let mapleader=","
 
