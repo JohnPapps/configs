@@ -34,7 +34,8 @@ set shortmess=atI
 
 " Remove whitespace before saving any file
 autocmd BufWritePre        *                :%s/\s\+$//e
-
+" Fix tabs on opening file
+autocmd BufReadPost        *                :retab
 
 " Custom leader
 "let mapleader=","
