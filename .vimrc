@@ -95,6 +95,9 @@ set noswapfile
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
+" Remove trailing whitespace on save
+autocmd BufWritePre *.py :%s/\s\+$//e
+
 " Toggle list visibility
 nmap <silent> <leader>s :set nolist!<CR>
 vmap <silent> <leader>c :s/^/#/<CR>
@@ -114,14 +117,14 @@ if has('autocmd')
 endif
 
 "" Prevent noob behaviour
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " Change long line cursor behavior
 nnoremap j gj
