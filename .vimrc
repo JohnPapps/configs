@@ -56,10 +56,8 @@ if has('syntax')
     colorscheme desert
 endif
 
-" Basics
-"set tw=78
-"set wrap
-
+set textwidth=78
+set colorcolumn=+1
 set autoindent
 set smartindent
 set smarttab
