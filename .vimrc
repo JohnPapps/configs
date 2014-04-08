@@ -46,8 +46,10 @@ if has('syntax')
     colorscheme grb256
 endif
 
-set textwidth=78
-set colorcolumn=+1
+set wrap
+set textwidth=0
+set wrapmargin=0
+set colorcolumn=80
 set autoindent
 set smartindent
 set smarttab
@@ -85,8 +87,6 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 nmap <silent> <leader>s :set nolist!<CR>
 vmap <silent> <leader>c :s/^/#/<CR>
 
-autocmd BufRead *json set tw=0
-autocmd BufRead *json set nowrap
 autocmd BufRead,BufNewFile *.html set shiftwidth=2
 autocmd BufRead,BufNewFile *.html set tabstop=2
 autocmd BufRead,BufNewFile *.html set softtabstop=2
