@@ -1,37 +1,41 @@
+set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic'
-Bundle 'sjl/gundo.vim'
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
+Plugin 'vim-airline/vim-airline'
+
+call vundle#end()
+filetype plugin indent on
 
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['python'],
                            \ 'passive_filetypes': [] }
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_args = '--rcfile=/Users/johnpapanastasiou/.pylintrc'
+" let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_args = '--rcfile=/Users/johnpapanastasiou/.pylintrc'
+let g:syntastic_python_checkers = ['flake8']
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:airline_powerline_fonts = 1
 
-filetype plugin indent on
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 set encoding=utf-8
 set termencoding=utf-8
 set t_Co=256
-let g:Powerline_symbols = 'fancy'
 set laststatus=2
 
 nnoremap <F5> :GundoToggle<CR>
 
 set shortmess=atI
-
-set nocompatible
 
 " Remove scrollbar/menu/tabs/etc
 set guioptions=a
@@ -58,6 +62,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+set backspace=indent,eol,start
 set ruler
 set nohls
 set showmatch
@@ -129,3 +134,4 @@ if exists("&undofile")
     set undofile " Creates .un~ files that contain undo information.
     set undodir=~/.vim-undo/ " Sets location of undo files directory.
 endif
+
